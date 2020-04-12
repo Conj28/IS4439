@@ -1,0 +1,51 @@
+﻿@model project.Models.Booking
+<section class="hero-wrap hero-wrap-2 bg-image"  data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread">Reservation</h1>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid px-0">
+        <div class="row d-flex justify-content-center no-gutters">
+            <div class="col-md-6 order-md-last ftco-animate makereservation p-4 p-md-5 pt-5">
+                <div class="py-md-5">
+                    <div class="heading-section ftco-animate mb-5">
+                        <span class="subheading">Info</span>
+                        <h2 class="mb-4">Confirmed Reservation</h2>
+                    </div>
+
+
+                    <h2>Booking Informtion</h2>
+
+
+                    <p>Booking Number: @Model.BookingNum</p>
+
+                    <p>Name: @Model.Name </p>
+                    <p>Email:  @Model.Email</p>
+                    <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
+                    <p>Email:  @Model.Email</p>
+                    <p>Guests: @Model.NumGuests</p>
+                    <p>Service: @Model.Service</p>
+                    <p>Time: @Model.Time</p>
+                    <p>Dietary Restrictions: @Model.Diet</p>
+
+
+                    <a asp-controller="Reservations" asp-action="Index"><input type="button" value="View all Reservations" class="btn btn-primary py-3 px-5" /></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/js/time.js"></script>
+}
+

@@ -1,0 +1,23 @@
+﻿.bg-yellow {
+    background-color: #ffa323 !important;
+}
+
+.bg-black {
+    background-color: #000000 !important;
+}
+.listHorizontal {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    min
+}
+
+    .listHorizontal li {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+.bg-image {
+    background-image: url('/images/bg_1.jpg');
+}

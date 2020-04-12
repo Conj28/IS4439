@@ -1,0 +1,147 @@
+﻿@model project.Models.Booking
+<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread">Reservation</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Reservation <i class="ion-ios-arrow-forward"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid px-0">
+        <div class="row d-flex justify-content-center no-gutters">
+            <div class="col-md-6 order-md-last ftco-animate makereservation p-4 p-md-5 pt-5">
+                <div class="py-md-5">
+                    <div class="heading-section ftco-animate mb-5">
+                        <span class="subheading">Book a table</span>
+                        <h2 class="mb-4">Make Reservation</h2>
+                    </div>
+
+                    @if (Model == null)
+                    {
+                        @using (Html.BeginForm("Index", "Booking"))
+                        {
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.ValidationSummary()
+                                </div>
+
+                                <div class="col-md-6">
+
+
+                                    <div class="form-group">
+                                        @Html.Label("Name")
+                                        @Html.TextBoxFor(model => model.Name, null, new { placeholder = "Name", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("Email")
+                                        @Html.TextBoxFor(model => model.Email, null, new { placeholder = "Email", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("Date")
+                                        @Html.TextBoxFor(model => model.BookingDate, new { @type = "date", @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("Number of Guests")
+                                        @Html.TextBoxFor(model => model.NumGuests, new { @type = "number", @class = "form-control" })
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("Service")
+
+                                        <div>
+                                            <p4>Breakfast&nbsp; </p4>
+                                            @Html.RadioButtonFor(model => model.Service, "Breakfast", new { @class = "ml-4" })
+                                        </div>
+                                        <div>
+                                            <p4>Lunch &nbsp;  &nbsp;   &nbsp; &nbsp; </p4>
+                                            @Html.RadioButtonFor(model => model.Service, "Lunch", new { @class = "ml-4" })
+                                        </div>
+                                        <div>
+                                            <p4>Dinner &nbsp;   &nbsp; &nbsp;</p4>
+                                            @Html.RadioButtonFor(model => model.Service, "Dinner", new { @class = "ml-4" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Label("Time")
+                                        <div class="select-wrap one-third">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            @Html.DropDownList("Time", new List<SelectListItem> { }
+                                        , "Time", new { @class = "form-control" })
+                                        </div>
+
+                                        <p id="timeWarning"><small>Please first select service</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Other</label>
+                                        <div>
+                                            <span>Dietary Restrictions</span>
+                                            @Html.CheckBoxFor(model => model.Diet)
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-12 mt-3">
+                                    <div class="form-group">
+                                        <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5" style="width:100%">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        }
+
+
+
+                    }
+                    else
+                    {
+
+                        <h2>Booking Confirmation </h2>
+
+
+                        <p>Booking Number: @Model.BookingNum</p>
+
+                        <p>Name: @Model.Name </p>
+                        <p>Email:  @Model.Email</p>
+                        <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
+                        <p>Email:  @Model.Email</p>
+                        <p>Guests: @Model.NumGuests</p>
+                        <p>Service: @Model.Service</p>
+                        <p>Time: @Model.Time</p>
+                        <p>Dietary Restrictions: @Model.Diet</p>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/js/time.js"></script>
+   }
+
