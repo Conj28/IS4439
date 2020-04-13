@@ -43,27 +43,26 @@ namespace project.Models
         {
             DB db = Restore();
 
-            int nextId = 1;
-
-            //get the lst id
-            if (db.booking.Count > 0)
-            {
-                var lastItem = db.booking[db.booking.Count - 1];
-                int lastId = lastItem.BookingNum;
-                nextId = lastId + 1;
-            }
-
-
             Booking NewBooking = new Booking();
 
-            NewBooking = b;
-            NewBooking.BookingNum = nextId;
-            db.booking.Add(b);
+            if (b.BookingNum == 0)
+            {
+               
+                NewBooking = b;
+                NewBooking.BookingNum = GetLastId();
+                db.booking.Add(NewBooking);
 
-            db.Save();
-         
-            //does not retuen message as it must return the generated booing number to be displayed to user
-            return NewBooking;
+                db.Save();
+                return NewBooking;
+            }
+            else
+            {
+                db.booking.Add(b);
+                db.Save();
+                //does not retuen message as it must return the generated booing number to be displayed to user
+                return b;
+            }
+
         }
 
         public List<Booking> GetBookingByName(string name)
@@ -98,7 +97,7 @@ namespace project.Models
 
         }
 
-        public Booking GetBookingById(int id)
+     /*   public Booking GetBookingById(int id)
         {
             DB db = Restore();
             Booking foundBooking = new Booking();
@@ -112,12 +111,12 @@ namespace project.Models
                 }
 }
             return foundBooking;
-    }
+    } */
 
         public static string RemoveBooking(int Id)
         {
             DB db = Restore();
-            Booking b = db.GetBookingById(Id);
+            Booking b = db.GetBooking(Id);
             if(b == null)
             {
                 return ("Error");
@@ -127,6 +126,19 @@ namespace project.Models
             if (message == "Ok")
                 message = string.Format("Boooking ID:{0} has been removed", b.BookingNum);
             return message;
+        }
+
+        public Booking GetBooking(int id)
+        {
+            Booking booking = null;
+            foreach(Booking b in this.booking)
+            {
+                if(b.BookingNum == id)
+                {
+                    booking = b;
+                }
+            }
+            return booking;
         }
 
         public static int GetLastId()

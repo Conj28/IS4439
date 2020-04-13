@@ -12,5 +12,15 @@ namespace project.Controllers
         {
             return View();
         }
+
+        public IActionResult Review()
+        {
+            return View();
+        }
+
+        public IActionResult Team()
+        {
+            return View();
+        }
     }
 }

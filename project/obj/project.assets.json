@@ -5997,11 +5997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Conor\\Documents\\College\\C#-WebDev\\proTest\\project\\project\\project.csproj",
+      "projectUniqueName": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj",
       "projectName": "project",
-      "projectPath": "C:\\Users\\Conor\\Documents\\College\\C#-WebDev\\proTest\\project\\project\\project.csproj",
+      "projectPath": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj",
       "packagesPath": "C:\\Users\\Conor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Conor\\Documents\\College\\C#-WebDev\\proTest\\project\\project\\obj\\",
+      "outputPath": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -11,13 +11,15 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
+          //  string message = DB.RemoveBooking(3);
+          //  ViewBag.Title = message;
             DB db = DB.Restore();
             ViewBag.bookings = db.booking;
             ViewBag.Title = "All Reservations";
             //ViewBag.bookings = db.GetBookingByName("Conor");  
             //String dt = "20-03-2020";
             //ViewBag.bookings = db.GetBookingByDate(dt);
-
+         
 
             return View();
 
@@ -43,7 +45,7 @@ namespace project.Controllers
         {
             ViewBag.Title = string.Format("Details of Booking Number {0}", Id);
             DB db = DB.Restore();
-            Booking bookingInfo = db.GetBookingById(Id);
+            Booking bookingInfo = db.GetBooking(Id);
               if (bookingInfo == null)
                {
                    ViewBag.Message = "The are no bookings for the id " + Id + " please try another date";

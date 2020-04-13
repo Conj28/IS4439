@@ -21,6 +21,18 @@ namespace project.Controllers
             return db.booking;
         }
 
+        //Get api/{id}
+        [Route("{Id}")]
+        public IActionResult GetBooking(int id)
+        {
+            DB db = DB.Restore();
+            Booking b = db.GetBooking(id);
+            if(b == null)
+                return NotFound();
+            return new ObjectResult(b);
+        }
+
+
         // GET: date/{date}
         [Route("date/{date}")]
         [HttpGet]
@@ -28,7 +40,7 @@ namespace project.Controllers
         {
             DB db = DB.Restore();
             List<Booking> bookingDate = db.GetBookingByDate(date);
-            if(bookingDate.Count == 0)
+            if (bookingDate.Count == 0)
             {
                 return NotFound();
             }
@@ -41,7 +53,7 @@ namespace project.Controllers
         [HttpPost]
         public IActionResult NewBooking([FromBody] Booking b)
         {
-           
+
             Booking newBooking = new Booking();
             newBooking = DB.AddBooking(b);
             if (newBooking == null)
@@ -51,18 +63,26 @@ namespace project.Controllers
             return new ObjectResult(newBooking);
         }
 
-      /*  // POST: api/Api
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        } */
 
-        
+        //Put
+        [HttpPut]
+        public IActionResult Update([FromBody] Booking b)
+        {
+            string message = DB.RemoveBooking(b.BookingNum);
+            if (b == null)
+            {
+                return BadRequest();
+            }
+            DB.AddBooking(b);
+            return CreatedAtAction(nameof(GetBooking), new { BookingNum = b.BookingNum }, b);
+        }
+
 
         //DELETE
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            //int num = Int32.Parse(id);
             string message = DB.RemoveBooking(id);
             if (message == "Error")
             {
