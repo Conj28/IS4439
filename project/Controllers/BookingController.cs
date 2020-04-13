@@ -21,7 +21,11 @@ namespace project.Controllers
         {
             if (ModelState.IsValid)
             {
-
+               if(b.BookingDate < DateTime.Now)
+                {
+                    ViewBag.ErrorMessage = "Booking date must be in the future";
+                    return View();
+                }
            
                 Booking newBooking = DB.AddBooking(b);
                 return View(newBooking);

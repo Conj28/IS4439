@@ -234,3 +234,4 @@ C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Debug\netcoreapp3.1\project.p
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Debug\netcoreapp3.1\project.genruntimeconfig.cache
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Debug\netcoreapp3.1\Razor\Views\About\Review.cshtml.g.cs
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Debug\netcoreapp3.1\Razor\Views\About\Team.cshtml.g.cs
+C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Debug\netcoreapp3.1\Razor\Views\Menu\Index.cshtml.g.cs
