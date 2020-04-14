@@ -1,8 +1,6 @@
 ﻿@model project.Models.Booking
 
-<link rel="stylesheet" href="~/css/datatables.min.css">
-
-<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 bg-image" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -109,17 +107,18 @@
                                             @foreach (Booking b in ViewBag.Bookings)
                                             {
 
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1">@b.BookingNum</td>
-                                                    <td class="sorting_1"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
-                                                    <td>@b.Email</td>
-                                                    <td>@b.BookingDate.ToString("dd/MM/yyyy")</td>
-                                                    <td>@b.Service</td>
-                                                    <td>@b.Time</td>
-                                                    <td>@b.NumGuests</td>
-                                                    <td>@b.Diet</td>
+                                            <tr role="row" class="odd">
 
-                                                </tr>
+                                                <td class="sorting_1"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
+                                                <td>@b.Email</td>
+                                                <td>@b.Name</td>
+                                                <td>@b.BookingDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@b.Service</td>
+                                                <td>@b.Time</td>
+                                                <td>@b.NumGuests</td>
+                                                <td>@b.Diet</td>
+
+                                            </tr>
                                             }
 
 

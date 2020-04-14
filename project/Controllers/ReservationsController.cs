@@ -33,6 +33,7 @@ namespace project.Controllers
             if(bookingDate.Count == 0)
             {
                 ViewBag.Message = "The are no bookings for the date " + dt + " please try another date";
+                ViewBag.Title = "Not Found";
                 return View("NotFound");
             }
 
@@ -49,7 +50,8 @@ namespace project.Controllers
               if (bookingInfo == null)
                {
                    ViewBag.Message = "The are no bookings for the id " + Id + " please try another date";
-                   return View("NotFound");
+                ViewBag.Title = "Not Found";
+                return View("NotFound");
                }
 
             

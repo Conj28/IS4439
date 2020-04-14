@@ -10,6 +10,7 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Title = "Menu";
             return View();
         }
     }

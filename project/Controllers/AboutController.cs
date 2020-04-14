@@ -10,16 +10,19 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Title = "About Us";
             return View();
         }
 
         public IActionResult Review()
         {
+            ViewBag.Title = "Reviews";
             return View();
         }
 
         public IActionResult Team()
         {
+            ViewBag.Title = "The Team";
             return View();
         }
     }

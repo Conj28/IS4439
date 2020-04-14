@@ -12,6 +12,7 @@ namespace project.Controllers
         {
             if (statusCode == 404)
             {
+                ViewBag.Title = "Error 404";
                 return View("404");
             }
             return View();

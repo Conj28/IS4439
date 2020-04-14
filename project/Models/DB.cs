@@ -8,7 +8,7 @@ namespace project.Models
     public class DB
     {
         public DB()
-        {  
+        {
         }
         public List<Booking> booking { get; set; }
 
@@ -45,29 +45,29 @@ namespace project.Models
 
             Booking NewBooking = new Booking();
 
-           
-                NewBooking = b;
 
-                //Call function to auto increment Value
-                NewBooking.BookingNum = GetLastId();
-                db.booking.Add(NewBooking);
+            NewBooking = b;
 
-                db.Save();
-                return NewBooking;
-            
-          
+            //Call function to auto increment Value
+            NewBooking.BookingNum = GetLastId();
+            db.booking.Add(NewBooking);
+
+            db.Save();
+            return NewBooking;
+
+
         }
 
 
         public static Booking UpdateBooking(Booking b)
         {
             DB db = Restore();
-            
-                db.booking.Add(b);
-                db.Save();
-                //does not retuen message as it must return the generated booing number to be displayed to user
-                return b;
-            
+
+            db.booking.Add(b);
+            db.Save();
+            //does not retuen message as it must return the generated booing number to be displayed to user
+            return b;
+
 
         }
 
@@ -103,27 +103,27 @@ namespace project.Models
 
         }
 
-     /*   public Booking GetBookingById(int id)
-        {
-            DB db = Restore();
-            Booking foundBooking = new Booking();
+        /*   public Booking GetBookingById(int id)
+           {
+               DB db = Restore();
+               Booking foundBooking = new Booking();
 
-            foreach (Booking b in db.booking)
-            {
-                if (b.BookingNum == id)
-                {
-                    //if it matches assign the objec to this object
-                    foundBooking = b;
-                }
-}
-            return foundBooking;
-    } */
+               foreach (Booking b in db.booking)
+               {
+                   if (b.BookingNum == id)
+                   {
+                       //if it matches assign the objec to this object
+                       foundBooking = b;
+                   }
+   }
+               return foundBooking;
+       } */
 
         public static string RemoveBooking(int Id)
         {
             DB db = Restore();
             Booking b = db.GetBooking(Id);
-            if(b == null)
+            if (b == null)
             {
                 return ("Error");
             }
@@ -137,9 +137,9 @@ namespace project.Models
         public Booking GetBooking(int id)
         {
             Booking booking = null;
-            foreach(Booking b in this.booking)
+            foreach (Booking b in this.booking)
             {
-                if(b.BookingNum == id)
+                if (b.BookingNum == id)
                 {
                     booking = b;
                 }
@@ -150,19 +150,39 @@ namespace project.Models
         public static int GetLastId()
         {
             DB db = Restore();
-              
-            int nextId = 1;
 
-            // get the lst id ad increment by 1
-            if (db.booking.Count > 0)
-             {
-                 var lastItem = db.booking[db.booking.Count - 1];
-                 int lastId = lastItem.BookingNum;
-                 nextId = lastId + 1;
-             }
+            //cnt only use the last record as a PUT will mess up order
+            //int nextId = 1;
 
-            return nextId;
+           
+            /*   if (db.booking.Count > 0)
+                {
+                    var lastItem = db.booking[db.booking.Count - 1];
+                    int lastId = lastItem.BookingNum;
+                    nextId = lastId + 1;
+                }
+               foreach(Booking b in db.booking)
+               {
+                   if(nextId == b.BookingNum)
+                   {
+                       nextId = b.BookingNum + 1;
+                   }
+               } */
+
+            int HighestNum = 1;
+
+            //get the highest ID and add one
+            foreach (Booking b in db.booking)
+            {
+                if (HighestNum < b.BookingNum)
+                    HighestNum = b.BookingNum;
+            }
+            int nextNum = HighestNum + 1;
+            return nextNum;
         }
+
+
     }
+
 
 }

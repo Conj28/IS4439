@@ -49,7 +49,7 @@ namespace project.Controllers
 
 
 
-        // GET: date/{date}
+        // POST
         [HttpPost]
         public IActionResult NewBooking([FromBody] Booking b)
         {
@@ -60,7 +60,9 @@ namespace project.Controllers
             {
                 return NotFound();
             }
-            return new ObjectResult(newBooking);
+            //add Booking returns booking object with auto Increment 
+          return new ObjectResult(newBooking);
+          
         }
 
 
@@ -73,7 +75,7 @@ namespace project.Controllers
             {
                 return BadRequest();
             }
-            DB.AddBooking(b);
+            DB.UpdateBooking(b);
             return CreatedAtAction(nameof(GetBooking), new { BookingNum = b.BookingNum }, b);
         }
 

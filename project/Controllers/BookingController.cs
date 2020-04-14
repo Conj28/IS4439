@@ -12,6 +12,7 @@ namespace project.Controllers
         // Get:/Booking/
         public IActionResult Index()
         {
+            ViewBag.Title = "Book a Table";
             return View();
         }
 
@@ -25,10 +26,13 @@ namespace project.Controllers
                 {
                     ViewBag.Service = b.Service;
                     ViewBag.ErrorMessage = "Booking date must be in the future";
+                    ViewBag.Title = "Book a Table";
+
                     return View();
                 }
 
                 Booking newBooking = DB.AddBooking(b);
+                ViewBag.Title = "Booking Confirmation";
                 return View(newBooking);
 
             }
