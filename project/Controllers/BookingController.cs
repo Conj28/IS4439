@@ -21,17 +21,19 @@ namespace project.Controllers
         {
             if (ModelState.IsValid)
             {
-               if(b.BookingDate < DateTime.Now)
+                if (b.BookingDate < DateTime.Now)
                 {
+                    ViewBag.Service = b.Service;
                     ViewBag.ErrorMessage = "Booking date must be in the future";
                     return View();
                 }
-           
+
                 Booking newBooking = DB.AddBooking(b);
                 return View(newBooking);
 
             }
             else
+                ViewBag.Service = b.Service;
                 return View();
         }
 
