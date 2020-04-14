@@ -8,7 +8,7 @@ namespace project.Models
     public class DB
     {
         public DB()
-        {
+        {  
         }
         public List<Booking> booking { get; set; }
 
@@ -45,23 +45,29 @@ namespace project.Models
 
             Booking NewBooking = new Booking();
 
-            if (b.BookingNum == 0)
-            {
-               
+           
                 NewBooking = b;
+
+                //Call function to auto increment Value
                 NewBooking.BookingNum = GetLastId();
                 db.booking.Add(NewBooking);
 
                 db.Save();
                 return NewBooking;
-            }
-            else
-            {
+            
+          
+        }
+
+
+        public static Booking UpdateBooking(Booking b)
+        {
+            DB db = Restore();
+            
                 db.booking.Add(b);
                 db.Save();
                 //does not retuen message as it must return the generated booing number to be displayed to user
                 return b;
-            }
+            
 
         }
 
@@ -147,7 +153,7 @@ namespace project.Models
               
             int nextId = 1;
 
-            // get the lst id
+            // get the lst id ad increment by 1
             if (db.booking.Count > 0)
              {
                  var lastItem = db.booking[db.booking.Count - 1];
