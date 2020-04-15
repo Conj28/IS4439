@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -88,7 +89,8 @@ namespace project.Models
 
         public List<Booking> GetBookingByDate(String dt)
         {
-            DateTime date = Convert.ToDateTime(dt);
+           // DateTime date = Convert.ToDateTime(dt);
+            DateTime date = DateTime.ParseExact(dt, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             List<Booking> booking_list = new List<Booking>();
             DB db = Restore();

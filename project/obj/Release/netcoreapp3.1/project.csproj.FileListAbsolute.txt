@@ -118,3 +118,4 @@ C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Release\netcoreapp3.1\staticw
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Release\netcoreapp3.1\project.dll
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Release\netcoreapp3.1\project.pdb
 C:\Users\Conor\Documents\GitHub\IS4439\project\obj\Release\netcoreapp3.1\project.genruntimeconfig.cache
+C:\Users\Conor\Documents\GitHub\IS4439\project\bin\Release\netcoreapp3.1\aws-beanstalk-tools-defaults.json
