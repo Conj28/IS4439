@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,7 +23,6 @@ namespace project.Models
         public String Email { get; set; }
 
         [Required]
-      
         public DateTime BookingDate { get; set; }
 
         [Required]
@@ -34,7 +33,7 @@ namespace project.Models
         
        [Required]
        [Range(1,12)]
-       public String NumGuests { get; set; }
+       public int NumGuests { get; set; }
 
         public bool Diet { get; set; }
     }

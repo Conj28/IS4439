@@ -27,7 +27,10 @@ namespace project.Controllers
 
         public IActionResult Date(String dt)
         {
-            ViewBag.Title = string.Format("All Reservations on {0}", dt);
+
+            DateTime date = Convert.ToDateTime(dt);
+
+            ViewBag.Title = string.Format("All Reservations on {0}", date.ToString("dd/MM/yyyy"));
             DB db = DB.Restore();
             List<Booking> bookingDate = db.GetBookingByDate(dt);
             if(bookingDate.Count == 0)

@@ -231,5 +231,15 @@
       <NumGuests>3</NumGuests>
       <Diet>false</Diet>
     </Booking>
+    <Booking>
+      <BookingNum>25</BookingNum>
+      <Name>Liam Mullins</Name>
+      <Email>lm@gmail.com</Email>
+      <BookingDate>2020-04-25T00:00:00</BookingDate>
+      <Service>Dinner</Service>
+      <Time>21:00</Time>
+      <NumGuests>6</NumGuests>
+      <Diet>false</Diet>
+    </Booking>
   </booking>
 </DB>

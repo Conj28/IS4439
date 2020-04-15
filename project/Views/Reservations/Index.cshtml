@@ -33,7 +33,7 @@
                                     @using (Html.BeginForm("Date", "Reservations"))
                                     {
                                         <li class="ml-4"><p class="text-white">Filter by Date</p></li>
-                                        <li class="ml-4">@Html.TextBox("dt", "", new { @class = "form-control", @type = "date", placeholder = "Date" })</li>
+                                        <li class="ml-4">@Html.TextBox("dt", "", new { @class = "form-control", @type = "date", placeholder = "Date", @dateFormat = "dd-MM-yyyy" })</li>
                                         <li class="ml-4"><input type="submit" value="Filter" class="btn btn-primary py-3 px-5" /></li>
                                         <li class="ml-4"> <a asp-controller="Reservations" asp-action="Index"><input type="button" value="Reset Filter" class="btn btn-primary py-3 px-5" /></a></li>
                                     }
@@ -113,7 +113,7 @@
                                                     <td class="sorting_1"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
                                                     <td>@b.Name</td>
                                                     <td>@b.Email</td>
-                                                    <td><a asp-controller="Reservations" asp-action="Date" asp-route-dt="@b.BookingDate.ToString("dd-MM-yyyy")">@b.BookingDate.ToString("dd/MM/yyyy")</a></td>
+                                                    <td><a asp-controller="Reservations" asp-action="Date" asp-route-dt="@b.BookingDate.ToString("yyyy-MM-dd")">@b.BookingDate.ToString("dd/MM/yyyy")</a></td>
                                                     <!--<td>@b.BookingDate.ToString("dd/MM/yyyy")</td> -->
                                                     <td>@b.Service</td>
                                                     <td>@b.Time</td>
