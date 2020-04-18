@@ -50,8 +50,10 @@ namespace project
             app.UseAuthorization();
             app.UseMvc(routes =>
             {
+                
                 routes.MapRoute(name: "date", template: "date/{dt}", defaults: new { controller = "Reservations", action = "Date" });
-                routes.MapRoute(name: "info", template: "info/{Id}", defaults: new { controller = "Reservations", action = "BookingInfo" });
+                //date rooute doen in  controller
+                //routes.MapRoute(name: "info", template: "info/{Id}", defaults: new { controller = "Reservations", action = "BookingInfo" });
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
             });
         }

@@ -25,6 +25,7 @@ namespace project.Controllers
 
         }
 
+        
         public IActionResult Date(String dt)
         {
 
@@ -45,6 +46,7 @@ namespace project.Controllers
             return View();
         }
 
+        [Route("Info/{Id}")]
         public IActionResult BookingInfo(int Id)
         {
             ViewBag.Title = string.Format("Details of Booking Number {0}", Id);

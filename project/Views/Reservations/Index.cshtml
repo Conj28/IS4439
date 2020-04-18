@@ -69,7 +69,7 @@
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-sort="ascending"
                                                     aria-label="Name: activate to sort column descending"
-                                                    style="width: 64px;">Name</th>
+                                                    style="width: 81px;">Name</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
@@ -79,7 +79,7 @@
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Office: activate to sort column ascending"
-                                                    style="width: 56px;">Date</th>
+                                                    style="width: 35px;">Date</th>
                                                 <th class="sorting bg-yellow "
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
@@ -114,7 +114,6 @@
                                                     <td>@b.Name</td>
                                                     <td>@b.Email</td>
                                                     <td><a asp-controller="Reservations" asp-action="Date" asp-route-dt="@b.BookingDate.ToString("yyyy-MM-dd")">@b.BookingDate.ToString("dd/MM/yyyy")</a></td>
-                                                    <!--<td>@b.BookingDate.ToString("dd/MM/yyyy")</td> -->
                                                     <td>@b.Service</td>
                                                     <td>@b.Time</td>
                                                     <td>@b.NumGuests</td>

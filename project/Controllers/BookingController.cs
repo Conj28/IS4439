@@ -38,7 +38,8 @@ namespace project.Controllers
             }
             else
                 ViewBag.Service = b.Service;
-                return View();
+            ViewBag.Title = "Book a Table";
+            return View();
         }
 
     }
