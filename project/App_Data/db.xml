@@ -241,5 +241,15 @@
       <NumGuests>6</NumGuests>
       <Diet>false</Diet>
     </Booking>
+    <Booking>
+      <BookingNum>26</BookingNum>
+      <Name>Test User</Name>
+      <Email>test@gmail.com</Email>
+      <BookingDate>2020-04-23T00:00:00</BookingDate>
+      <Service>Dinner</Service>
+      <Time>21:30</Time>
+      <NumGuests>6</NumGuests>
+      <Diet>false</Diet>
+    </Booking>
   </booking>
 </DB>
