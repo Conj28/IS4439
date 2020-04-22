@@ -25,24 +25,25 @@
                     <div class="row">
                         <div class="col-lg-12 mb-4">
                             <div class="card">
-                               
+
 
                                 <ul class="listHorizontal card py-3 bg-image">
                                     @using (Html.BeginForm("Date", "Reservations"))
                                     {
-                                        <li class="ml-4"><p class="text-white">Filter by Date</p></li>
-                                        <li class="ml-4">@Html.TextBox("dt", "", new { @class = "form-control", @type = "date", placeholder = "Date", @dateFormat = "dd-MM-yyyy" })</li>
-                                        <li class="ml-4"><input type="submit" value="Filter" class="btn btn-primary py-3 px-5" /></li>
-                                        <li class="ml-4"> <a asp-controller="Reservations" asp-action="Index"><input type="button" value="Reset Filter" class="btn btn-primary py-3 px-5" /></a></li>
+                                    <li class="ml-4"><p class="text-white">Filter by Date</p></li>
+                                    <li class="ml-4">@Html.TextBox("dt", "", new { @class = "form-control", @type = "date", placeholder = "Date", @dateFormat = "dd-MM-yyyy" })</li>
+                                    <li class="ml-4"><input type="submit" value="Filter" class="btn btn-primary py-3 px-5" /></li>
+                                    <li class="ml-4"> <a asp-controller="Reservations" asp-action="Index"><input type="button" value="Reset Filter" class="btn btn-primary py-3 px-5" /></a></li>
                                     }
                                 </ul>
 
 
-                                
+
                             </div>
                         </div>
                     </div>
                     <!--datatable start-->
+                    <!-- Utalising datattables plugin https://datatables.net/-->
 
                     <div class="table-responsive">
                         <div id="dataTable_wrapper"
@@ -61,43 +62,35 @@
                                                 <th class="sorting_asc bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-sort="ascending"
-                                                    aria-label="Name: activate to sort column descending"
-                                                    style="width: 64px;">Booking #</th>
+                                                    aria-label="Name: activate to sort column descending">Booking #</th>
                                                 <th class="sorting_asc bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-sort="ascending"
-                                                    aria-label="Name: activate to sort column descending"
-                                                    style="width: 81px;">Name</th>
+                                                    aria-label="Name: activate to sort column descending">Name</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Position: activate to sort column ascending"
-                                                    style="width: 81px;">Email</th>
+                                                    aria-label="Position: activate to sort column ascending">Email</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Office: activate to sort column ascending"
-                                                    style="width: 35px;">Date</th>
+                                                    aria-label="Office: activate to sort column ascending">Date</th>
                                                 <th class="sorting bg-yellow "
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Office: activate to sort column ascending"
-                                                    style="width: 56px;">Service</th>
+                                                    aria-label="Office: activate to sort column ascending">Service</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Age: activate to sort column ascending"
-                                                    style="width: 31px;">Time</th>
+                                                    aria-label="Age: activate to sort column ascending">Time</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Age: activate to sort column ascending"
-                                                    style="width: 31px;">Guests</th>
+                                                    aria-label="Age: activate to sort column ascending">Guests</th>
                                                 <th class="sorting bg-yellow"
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
-                                                    aria-label="Start date: activate to sort column ascending"
-                                                    style="width: 68px;">Diet Requiremants</th>
+                                                    aria-label="Start date: activate to sort column ascending">Diet Requiremants</th>
 
                                             </tr>
                                         </thead>
@@ -107,17 +100,17 @@
                                             @foreach (Booking b in ViewBag.Bookings)
                                             {
 
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
-                                                    <td>@b.Name</td>
-                                                    <td>@b.Email</td>
-                                                    <td><a asp-controller="Reservations" asp-action="Date" asp-route-dt="@b.BookingDate.ToString("yyyy-MM-dd")">@b.BookingDate.ToString("dd/MM/yyyy")</a></td>
-                                                    <td>@b.Service</td>
-                                                    <td>@b.Time</td>
-                                                    <td>@b.NumGuests</td>
-                                                    <td>@b.Diet</td>
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1" style="text-align:center"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
+                                                <td>@b.Name</td>
+                                                <td>@b.Email</td>
+                                                <td><a asp-controller="Reservations" asp-action="Date" asp-route-dt="@b.BookingDate.ToString("yyyy-MM-dd")">@b.BookingDate.ToString("dd/MM/yyyy")</a></td>
+                                                <td>@b.Service</td>
+                                                <td>@b.Time</td>
+                                                <td>@b.NumGuests</td>
+                                                <td>@b.Diet</td>
 
-                                                </tr>
+                                            </tr>
                                             }
 
 

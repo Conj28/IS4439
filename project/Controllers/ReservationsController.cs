@@ -64,5 +64,18 @@ namespace project.Controllers
             return View(bookingInfo);
         }
 
+        public IActionResult Delete(int Id)
+        {
+            
+            DB.RemoveBooking(Id);
+
+            DB db = DB.Restore();
+            ViewBag.bookings = db.booking;
+            ViewBag.Title = "Booking ID: " +Id+ " Removed" ;
+
+
+            return View("Index");
+        }
+
     }
 }

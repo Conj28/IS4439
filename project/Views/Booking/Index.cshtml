@@ -176,13 +176,13 @@
                 "22:00": "22:00",
             };
 
-            
+
             var $el = $("#Time");
 
             //adopted from https://stackoverflow.com/questions/1801499/how-to-change-options-of-select-with-jquery
             $(function () {
 
-                //every time a radio button is checked the 
+                //every time a radio button is checked the
                 $('input[type=radio]').change(function (e) {
 
                     // console.log("changed");
@@ -194,6 +194,7 @@
                         $.each(breakfastTimes, function (key, value) {
                             $el.append($("<option></option>")
                                 .attr("value", value).text(key));
+
                         });
                     }
                     if (radioValue == "Lunch") {
@@ -217,16 +218,20 @@
 
             });
 
-            //was when page reloaded with validation error the Time field was empty 
+            //was when page reloaded with validation error the Time field was empty
             //revices the selected service via ViewBag and then update the time field
-            var rv = "";
+            
             rv = "@ViewBag.Service";
+            ser = "@ViewBag.ServiceTime";
+
+            console.log(ser)
 
             if (rv == "Breakfast") {
                 $el.empty(); // remove old options
                 $.each(breakfastTimes, function (key, value) {
                     $el.append($("<option></option>")
                         .attr("value", value).text(key));
+                    $("#Time").val(ser).trigger('change');
                 });
             }
             if (rv == "Lunch") {
@@ -234,6 +239,7 @@
                 $.each(lunchTimes, function (key, value) {
                     $el.append($("<option></option>")
                         .attr("value", value).text(key));
+                    $("#Time").val(ser).trigger('change');
                 });
             }
             if (rv == "Dinner") {
@@ -241,6 +247,7 @@
                 $.each(dinnerTimes, function (key, value) {
                     $el.append($("<option></option>")
                         .attr("value", value).text(key));
+                    $("#Time").val(ser).trigger('change');
                 });
             }
 

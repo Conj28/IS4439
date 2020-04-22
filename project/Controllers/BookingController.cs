@@ -24,7 +24,12 @@ namespace project.Controllers
             {
                 if (b.BookingDate < DateTime.Now)
                 {
+
+                    //make sure the users previously selected time and service are selected
                     ViewBag.Service = b.Service;
+                    ViewBag.ServiceTime = b.Time;
+
+
                     ViewBag.ErrorMessage = "Booking date must be in the future";
                     ViewBag.Title = "Book a Table";
 
@@ -37,7 +42,8 @@ namespace project.Controllers
 
             }
             else
-                ViewBag.Service = b.Service;
+            ViewBag.Service = b.Service;
+            ViewBag.ServiceTime = b.Time;
             ViewBag.Title = "Book a Table";
             return View();
         }
