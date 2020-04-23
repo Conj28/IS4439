@@ -1,11 +1,11 @@
 ﻿@model project.Models.Booking
-<section class="hero-wrap hero-wrap-2 bg-image"  data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 bg-image" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <h1 class="mb-2 bread">Reservation</h1>
-                
+                <h1 class="mb-2 bread">Confirmed Reservation</h1>
+
             </div>
         </div>
     </div>
@@ -18,32 +18,114 @@
                 <div class="py-md-5">
                     <div class="heading-section ftco-animate mb-5">
                         <span class="subheading">Info</span>
-                        <h2 class="mb-4">Confirmed Reservation</h2>
+                        <h2 class="mb-4">Booking Information</h2>
                     </div>
 
 
-                    <h2>Booking Informtion</h2>
 
 
-                    <p>Booking Number: @Model.BookingNum</p>
 
-                    <p>Name: @Model.Name </p>
-                    <p>Email:  @Model.Email</p>
-                    <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
-                    <p>Email:  @Model.Email</p>
-                    <p>Guests: @Model.NumGuests</p>
-                    <p>Service: @Model.Service</p>
-                    <p>Time: @Model.Time</p>
-                    <p>Dietary Restrictions: @Model.Diet</p>
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Name</h3>
+                            <h4>@Model.Name</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow ">Email</h3>
+                            <h4>@Model.Email</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Date</h3>
+                            <h4>@Model.BookingDate.ToString("dd/MM/yyyy")</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Guests</h3>
+                            <h4>@Model.NumGuests</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Service</h3>
+                            <h4>@Model.Service</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Time</h3>
+                            <h4>@Model.Time</h4>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <h3 class="text-yellow">Diet Restirctions</h3>
+                            <h4>@Model.Diet</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <a asp-controller="Reservations" asp-action="Index"><input type="button" value="View all Reservations" class="btn btn-primary py-3 px-5" style="width:100%" /></a>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 mb-3">
 
 
-                    <a asp-controller="Reservations" asp-action="Index"><input type="button" value="View all Reservations" class="btn btn-primary py-3 px-5" /></a>
+                            <a href="javascript:{}" class="btn btn-black py-3 px-5"
+                               data-toggle="modal" data-target="#deleteModal" style="width:100%" > Delete</a>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!--  <p>Booking Number: @Model.BookingNum</p>
+
+                        <p>Name: @Model.Name </p>
+                        <p>Email:  @Model.Email</p>
+                        <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
+                        <p>Guests: @Model.NumGuests</p>
+                        <p>Service: @Model.Service</p>
+                        <p>Time: @Model.Time</p>
+                        <p>Dietary Restrictions: @Model.Diet</p>
+
+
+                        <a asp-controller="Reservations" asp-action="Index"><input type="button" value="View all Reservations" class="btn btn-primary py-3 px-5" /></a>
+                    -->
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Booking</h5>
+                <button class="close" type="button" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete booking number: @Model.BookingNum
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button"
+                        data-dismiss="modal">
+                    Cancel
+                </button>
+                <a class="btn btn-black" href="~/Delete/@Model.BookingNum">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 @section Scripts{
     <script src="~/js/time.js"></script>

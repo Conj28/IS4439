@@ -154,7 +154,7 @@ namespace project.Models
         {
             DB db = Restore();
 
-            //cnt only use the last record as a PUT will mess up order
+            //cant only use the last record as a PUT will mess up order
             //int nextId = 1;
 
            

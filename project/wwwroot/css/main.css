@@ -21,3 +21,13 @@
 .bg-image {
     background-image: url('/images/bg_1.jpg');
 }
+
+.text-yellow {
+    color: #ffa323;
+}
+
+.btn.btn-black:hover, .btn.btn-clack:focus, .btn.btn-black:active {
+    border: 1px solid #000;
+    color: #000;
+    background-color: #ffffff
+}

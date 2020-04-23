@@ -122,16 +122,62 @@
 
                         <h2>Booking Confirmation </h2>
 
+                        <div class="row">
 
-                        <p>Booking Number: @Model.BookingNum</p>
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Name</h3>
+                                <h4>@Model.Name</h4>
+                            </div>
 
-                        <p>Name: @Model.Name </p>
-                        <p>Email:  @Model.Email</p>
-                        <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
-                        <p>Guests: @Model.NumGuests</p>
-                        <p>Service: @Model.Service</p>
-                        <p>Time: @Model.Time</p>
-                        <p>Dietary Restrictions: @Model.Diet</p>
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow ">Email</h3>
+                                <h4>@Model.Email</h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Date</h3>
+                                <h4>@Model.BookingDate.ToString("dd/MM/yyyy")</h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Guests</h3>
+                                <h4>@Model.NumGuests</h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Service</h3>
+                                <h4>@Model.Service</h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Time</h3>
+                                <h4>@Model.Time</h4>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <h3 class="text-yellow">Diet Restirctions</h3>
+                                <h4>@Model.Diet</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a asp-controller="Reservations" asp-action="Index"><input type="button" value="View all Reservations" class="btn btn-primary py-3 px-5" style="width:100%" /></a>
+                            </div>
+
+
+
+                        </div>
+
+
+                        <!--  <p>Booking Number: @Model.BookingNum</p>
+
+           <p>Name: @Model.Name </p>
+           <p>Email:  @Model.Email</p>
+           <p>Date: @Model.BookingDate.ToString("dd/MM/yyyy")</p>
+           <p>Guests: @Model.NumGuests</p>
+           <p>Service: @Model.Service</p>
+           <p>Time: @Model.Time</p>
+           <p>Dietary Restrictions: @Model.Diet</p> -->
                     }
                 </div>
             </div>
@@ -257,7 +303,7 @@
        // console.log(radionValue);
 
 
-        //console.log("@ViewBag.service");
+        
 
     </script>
    <!-- <script src="~/js/time.js"></script> -->

@@ -11,15 +11,10 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
-          //  string message = DB.RemoveBooking(3);
-          //  ViewBag.Title = message;
+         
             DB db = DB.Restore();
             ViewBag.bookings = db.booking;
             ViewBag.Title = "All Reservations";
-            //ViewBag.bookings = db.GetBookingByName("Conor");  
-            //String dt = "20-03-2020";
-            //ViewBag.bookings = db.GetBookingByDate(dt);
-         
 
             return View();
 
@@ -64,6 +59,7 @@ namespace project.Controllers
             return View(bookingInfo);
         }
 
+        [Route("Delete/{id}")]
         public IActionResult Delete(int Id)
         {
             
@@ -73,8 +69,7 @@ namespace project.Controllers
             ViewBag.bookings = db.booking;
             ViewBag.Title = "Booking ID: " +Id+ " Removed" ;
 
-
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
     }

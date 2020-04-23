@@ -97,7 +97,7 @@
                                                     tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Start date: activate to sort column ascending"
-                                                    style="width: 68px;">Diet Requiremants</th>
+                                                    style="width: 68px;">Diet Requirements</th>
 
                                             </tr>
                                         </thead>
@@ -109,7 +109,7 @@
 
                                             <tr role="row" class="odd">
 
-                                                <td class="sorting_1"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
+                                                <td class="sorting_1" style="text-align:center"><a asp-controller="Reservations" asp-action="BookingInfo" asp-route-Id="@b.BookingNum">@b.BookingNum</a></td>
                                                 <td>@b.Name</td>
                                                 <td>@b.Email</td>
                                                 <td>@b.BookingDate.ToString("dd/MM/yyyy")</td>
