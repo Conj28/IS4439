@@ -222,16 +222,6 @@
       <Diet>false</Diet>
     </Booking>
     <Booking>
-      <BookingNum>25</BookingNum>
-      <Name>Conor Murphy</Name>
-      <Email>murphy97@live.ie</Email>
-      <BookingDate>2020-04-24T00:00:00</BookingDate>
-      <Service>Dinner</Service>
-      <Time>20:00</Time>
-      <NumGuests>5</NumGuests>
-      <Diet>true</Diet>
-    </Booking>
-    <Booking>
       <BookingNum>26</BookingNum>
       <Name>jb</Name>
       <Email>12@gmil.com</Email>

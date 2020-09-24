@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj": {}
+    "C:\\Users\\Conor\\Desktop\\Github_Prac\\aspPro\\IS4439\\project\\project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj": {
+    "C:\\Users\\Conor\\Desktop\\Github_Prac\\aspPro\\IS4439\\project\\project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj",
+        "projectUniqueName": "C:\\Users\\Conor\\Desktop\\Github_Prac\\aspPro\\IS4439\\project\\project.csproj",
         "projectName": "project",
-        "projectPath": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\project.csproj",
+        "projectPath": "C:\\Users\\Conor\\Desktop\\Github_Prac\\aspPro\\IS4439\\project\\project.csproj",
         "packagesPath": "C:\\Users\\Conor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Conor\\Documents\\GitHub\\IS4439\\project\\obj\\",
+        "outputPath": "C:\\Users\\Conor\\Desktop\\Github_Prac\\aspPro\\IS4439\\project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
